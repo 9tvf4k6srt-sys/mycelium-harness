@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run deterministic tests
+        run: npm test
+
+      - name: Offline mechanical eval suite
+        run: npm run eval
+
+      - name: Assert planted fail fixtures fail
+        run: npm run eval:assert-fail
+
+      - name: Offline demo smoke (writes versioned receipt)
+        run: npm run demo
