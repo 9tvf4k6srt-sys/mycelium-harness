@@ -1,0 +1,35 @@
+{
+  "name": "mycelium-harness",
+  "version": "0.1.0",
+  "description": "Track A agentic harness: deterministic orchestration stubs, mechanical graders, cold-clone offline proof.",
+  "license": "MIT",
+  "private": false,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "orchestrator-demo": "./bin/orchestrator-demo.cjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "demo": "node bin/orchestrator-demo.cjs"
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "tests/",
+    "evals/",
+    "docs/",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "agentic-harness",
+    "evaluation",
+    "orchestration",
+    "deterministic-tests",
+    "credibility"
+  ]
+}

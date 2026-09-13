@@ -1,0 +1,8 @@
+{
+  "id": "exact-match-001",
+  "grader": "exact_string_match",
+  "prompt": "Echo the token MYCELIUM_OK",
+  "expected": "MYCELIUM_OK",
+  "prediction": "MYCELIUM_OK",
+  "notes": "Fixture prediction matches expected so the mechanical grader exits 0 offline. Swap prediction to force a fail."
+}
