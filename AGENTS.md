@@ -12,7 +12,8 @@ Ship a **reproducible ground-truth harness**: deterministic gates strangers can 
 2. `docs/CREDIBILITY.md` — what tests prove / do **not** prove
 3. `docs/INDUSTRY-THESIS.md` — IT-AI Track A/B → MH surfaces (no invent)
 4. `skills/review-mycelium-harness/SKILL.md` — one-pass harness review (agentskills)
-5. `lib/workflow-runtime.cjs` — DAG / budgets / retries / cancel / receipts
+5. `lib/workflow-runtime.cjs` — DAG / budgets / retries / cancel / receipts (canonical runtime)
+   - `lib/orchestrator.cjs` is a **demo-shim** re-export only — not a second runtime
 6. `tests/` — reliability + eval + receipt contracts
 7. `evals/REPLICATION.md` — offline multi-arm mechanical eval
 

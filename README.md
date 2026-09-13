@@ -13,6 +13,7 @@ npm test
 npm run eval
 npm run eval:assert-fail
 npm run demo
+npm run bench   # optional offline wall-ms median
 ```
 
 No API keys. No network after clone. Node ≥ 18.
@@ -26,17 +27,19 @@ No API keys. No network after clone. Node ≥ 18.
 | `lib/workflow-runtime.cjs` | Adapted DAG runtime: budgets, retries, cancel, fail-closed receipts |
 | `tests/` | Reliability + mechanical-eval + receipt sequence contracts (`node --test`) |
 | `bin/orchestrator-demo.cjs` | Offline DAG demo; writes versioned receipt JSON |
+| `lib/orchestrator.cjs` | **Demo-shim** re-export of `workflow-runtime` only — not a second runtime |
+| `tools/bench-runtime.cjs` | Offline wall-ms median for demo DAG + eval suite (`npm run bench`) |
 | `evals/mechanical-eval.cjs` | Multi-arm mechanical grader (pass/control/adversarial/poison + planted fail) |
 | `evals/REPLICATION.md` | Cold-clone checklist for the offline eval |
 | `docs/CREDIBILITY.md` | What is / is not proven (dated) |
 | `docs/INDUSTRY-THESIS.md` | IT-AI Track A/B → what MH proves / does not |
 | `skills/review-mycelium-harness/SKILL.md` | One-pass review skill (agentskills) |
 | `AGENTS.md` | Short progressive-disclosure front door |
-| `.github/workflows/ci.yml` | CI: `npm test` + eval + planted-fail + demo — [green run](https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796) |
+| `.github/workflows/ci.yml` | CI: `npm test` + eval + planted-fail + demo — [green run](https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34735764321) |
 
 ## CI status (honesty)
 
-Actions green (fetched): https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796 — see [docs/CREDIBILITY.md](docs/CREDIBILITY.md) for what that does and does not prove.
+Primary HEAD green (fetched): https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34735764321 — see [docs/CREDIBILITY.md](docs/CREDIBILITY.md). First green (history): https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796.
 
 ## Credibility
 

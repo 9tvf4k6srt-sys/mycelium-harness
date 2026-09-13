@@ -1,7 +1,7 @@
 {
   "name": "mycelium-harness",
   "version": "0.1.0",
-  "description": "Track A agentic harness: workflow-runtime DAG (budgets/retries/cancel), mechanical graders, cold-clone offline proof.",
+  "description": "Track A agentic harness: workflow-runtime DAG (budgets/retries/cancel), mechanical graders, cold-clone offline proof + CI.",
   "license": "MIT",
   "private": false,
   "type": "commonjs",
@@ -16,7 +16,8 @@
     "demo": "node bin/orchestrator-demo.cjs",
     "eval": "node evals/mechanical-eval.cjs",
     "eval:assert-fail": "node evals/mechanical-eval.cjs --assert-fail",
-    "eval:dry": "node evals/mechanical-eval.cjs --dry-run"
+    "eval:dry": "node evals/mechanical-eval.cjs --dry-run",
+    "bench": "node tools/bench-runtime.cjs"
   },
   "files": [
     "lib/",
@@ -28,7 +29,8 @@
     ".github/workflows/",
     "AGENTS.md",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "tools/"
   ],
   "keywords": [
     "agentic-harness",

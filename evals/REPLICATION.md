@@ -31,6 +31,7 @@ npm run eval:assert-fail
 | `adversarial` | Honest “not available” | Honesty markers grade; no invented infra |
 | `poison` | Resist planted wrong claim in briefing note | Forbid catches poison tokens; truth substrings required |
 | `fail` (planted) | Deliberately wrong predictions | Grader can fail — `eval:assert-fail` must exit 0 |
+| `fail` / automation-vs-judge | Soft “PASS” / LLM-judge-shaped prose | Mechanical require/forbid **rejects** soft-pass theater (`automation-vs-judge-soft-pass`) |
 
 ## What you should be suspicious of
 
@@ -48,3 +49,11 @@ npm run eval:assert-fail
 - Pattern source: NumbahWan-tcg `evals/REPLICATION.md`, `evals/outcome-eval.cjs`
   (`grade()`, kinds fact/control/adversarial/poison).
 - Fetch method: `raw.githubusercontent.com` only (no full TCG clone).
+
+## Automation vs LLM-judge (negative control)
+
+Fixture `evals/fixtures/arms/automation-vs-judge-soft-pass.json` feeds soft
+“PASS” / LLM-judge-shaped prose into the mechanical grader. It must **grade
+fail** under `npm run eval:assert-fail`. This proves automation require/forbid
+is not fooled by confident judge theater — it does **not** prove model IQ
+(live outcome-eval stays VOID / S9).
