@@ -10,9 +10,11 @@ Ship a **reproducible ground-truth harness**: deterministic gates strangers can 
 
 1. `README.md` — 2-minute offline demo
 2. `docs/CREDIBILITY.md` — what tests prove / do **not** prove
-3. `lib/workflow-runtime.cjs` — DAG / budgets / retries / cancel / receipts
-4. `tests/` — reliability + eval + receipt contracts
-5. `evals/REPLICATION.md` — offline multi-arm mechanical eval
+3. `docs/INDUSTRY-THESIS.md` — IT-AI Track A/B → MH surfaces (no invent)
+4. `skills/review-mycelium-harness/SKILL.md` — one-pass harness review (agentskills)
+5. `lib/workflow-runtime.cjs` — DAG / budgets / retries / cancel / receipts
+6. `tests/` — reliability + eval + receipt contracts
+7. `evals/REPLICATION.md` — offline multi-arm mechanical eval
 
 Do **not** load doctrine dumps or invent capabilities not present in tree.
 

@@ -24,6 +24,7 @@
     "tests/",
     "evals/",
     "docs/",
+    "skills/",
     ".github/workflows/",
     "AGENTS.md",
     "README.md",

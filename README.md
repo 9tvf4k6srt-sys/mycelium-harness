@@ -29,6 +29,8 @@ No API keys. No network after clone. Node ≥ 18.
 | `evals/mechanical-eval.cjs` | Multi-arm mechanical grader (pass/control/adversarial/poison + planted fail) |
 | `evals/REPLICATION.md` | Cold-clone checklist for the offline eval |
 | `docs/CREDIBILITY.md` | What is / is not proven (dated) |
+| `docs/INDUSTRY-THESIS.md` | IT-AI Track A/B → what MH proves / does not |
+| `skills/review-mycelium-harness/SKILL.md` | One-pass review skill (agentskills) |
 | `AGENTS.md` | Short progressive-disclosure front door |
 | `.github/workflows/ci.yml` | CI: `npm test` + eval + planted-fail + demo — [green run](https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796) |
 
@@ -39,6 +41,10 @@ Actions green (fetched): https://github.com/9tvf4k6srt-sys/mycelium-harness/acti
 ## Credibility
 
 See [docs/CREDIBILITY.md](docs/CREDIBILITY.md). Default path does **not** claim model quality.
+
+## Industry thesis
+
+See [docs/INDUSTRY-THESIS.md](docs/INDUSTRY-THESIS.md) (Track A/B map + falsifiable forward bets). One-pass review: [skills/review-mycelium-harness/SKILL.md](skills/review-mycelium-harness/SKILL.md).
 
 ## License
 
