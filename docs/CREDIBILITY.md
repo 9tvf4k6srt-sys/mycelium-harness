@@ -24,7 +24,7 @@ Honesty layer for screeners and agents. Dated claims only; no invented greens.
 
 | Claim | Status | Why |
 | --- | --- | --- |
-| GitHub Actions green | **VOID** until a successful Actions run exists after `ci.yml` lands with `workflow` scope | Do **not** invent a green Actions URL. Local file runs `npm test` + eval + demo. Push may be rejected without OAuth `workflow` scope. |
+| GitHub Actions green | **Fetched green** 2026-09-13 — run https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796 (sha `2b184e0`, conclusion success) | Stranger-visible CI for `npm test` + eval + planted-fail + demo. Still not a hire guarantee. |
 | Model quality / agent IQ | **Not claimed** | No LLM calls on the default path; no held-out live outcome-eval receipt. Mechanical fixtures ≠ model proof. |
 | MEMORY-HELPS / live outcome-eval | **VOID** | Donor live multi-model outcome-eval not ported (would need API keys). Offline mechanical arms only. |
 | Production multi-agent product | **Not claimed** | Runtime is a deterministic DAG executor with budgets/retries/cancel — not a hosted agent platform. |
@@ -36,12 +36,12 @@ Honesty layer for screeners and agents. Dated claims only; no invented greens.
 
 **Now falsifiable locally:** DAG/fail-closed/cancel, mechanical multi-arm grading, planted-fail negative control, versioned event receipts.
 
-**Still easy to dismiss for hire bar:** no stranger-visible Actions green, no live model outcome receipt, no latency/cost numbers, no OS sandbox claim. That gap is intentional honesty — not an invitation to invent wow.
+**Still easy to dismiss for hire bar:** no live model outcome receipt, no latency/cost numbers, no OS sandbox claim. Actions green is now falsifiable. That residual is intentional honesty — not an invitation to invent wow.
 
 ## CI honesty
 
 - File: `.github/workflows/ci.yml` runs `npm test`, `npm run eval`, `npm run eval:assert-fail`, `npm run demo`.
-- If remote push of workflow files is rejected (missing OAuth `workflow` scope), keep `ci.yml` ready in-tree and treat Actions as **VOID** — prefer documenting the gap over inventing greens.
+- First stranger-visible green: https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796 (2026-09-13).
 
 ## Anti-sycophancy note
 
