@@ -2,7 +2,7 @@
 
 Track A **agentic harness** portfolio: reproducible ground-truth checks a stranger can cold-clone and run **offline**.
 
-Impress = deterministic tests + honest CREDIBILITY exclusions + thin agent front door — **not** game assets, not a 765 MiB HTML dump.
+Impress = deterministic workflow-runtime tests + honest CREDIBILITY exclusions — **not** game assets, not a 765 MiB HTML dump, not model IQ claims.
 
 ## 2-minute offline demo
 
@@ -19,12 +19,17 @@ No API keys. No network after clone. Node ≥ 18.
 
 | Surface | Role |
 | --- | --- |
-| `tests/orchestration.test.cjs` | Deterministic orchestration stub (`node --test`) |
-| `bin/orchestrator-demo.cjs` | One-command offline plan demo |
+| `lib/workflow-runtime.cjs` | Adapted DAG runtime: budgets, retries, cancel, fail-closed receipts |
+| `tests/orchestration.test.cjs` | Subset of donor reliability tests (`node --test`) |
+| `bin/orchestrator-demo.cjs` | One-command offline DAG demo (real subprocesses) |
 | `evals/` | Mechanical grader + fixture |
-| `docs/CREDIBILITY.md` | What is / is not proven |
+| `docs/CREDIBILITY.md` | What is / is not proven (dated) |
 | `AGENTS.md` | Short progressive-disclosure front door |
-| `.github/workflows/ci.yml` | CI runs the same test suite |
+| `.github/workflows/ci.yml` | Intended CI: same `node --test` suite |
+
+## CI status (honesty)
+
+**VOID on remote until GitHub Actions is enabled and the pushing token has `workflow` scope.** The workflow file is kept in-tree; absence of a green Actions badge/URL is intentional — do not invent one. See [docs/CREDIBILITY.md](docs/CREDIBILITY.md).
 
 ## Credibility
 

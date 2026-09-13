@@ -2,25 +2,38 @@
 
 Honesty layer for screeners and agents. Dated claims only; no invented greens.
 
-**As of:** 2026-09-13 (Asia/Taipei). Repo: `mycelium-harness` v0.1.0 scaffold.
+**As of:** 2026-09-13 (Asia/Taipei). Repo: `mycelium-harness` v0.1.0.
+**Bar MH-Upgrade Foundation id:** `7ef0d9b25fbc3be2ff07fc5b1e0184223a5570b6438ecb7bfb3279f9167a637b`.
+**Donor file SHA-256** (`NumbahWan-tcg` `tools/lib/workflow-runtime.cjs` raw → `lib/workflow-runtime.cjs`, byte-identical at port): `cfb2b2d579870bf19ad2e4eb6635455281a29772126d69f2bbe51d0d3364a334` (game tools absent in donor lib; DAG/budgets/retries/cancel/receipts retained).
 
-## What these tests prove
+## What these tests prove (local / cold-clone)
 
 | Check | Command | Proves |
 | --- | --- | --- |
-| Orchestration stub contract | `npm test` (`node --test`) | Deterministic plan/step/handoff behavior of the in-repo stub; pure Node, no network |
-| Offline demo | `npm run demo` | Cold-clone runnable CLI that prints a stable plan JSON and exit 0 |
-| Mechanical grader fixture | `evals/fixtures/exact-match.json` + grader in `evals/README.md` | Exact-string grading is mechanical and reproducible offline |
-| CI gate | `.github/workflows/ci.yml` | Same `node --test` suite runs on push/PR (when Actions is enabled) |
+| Workflow DAG + fail-closed | `npm test` (`node --test`) | Unsorted DAG order, dependency block on failure, reject empty/cycle/unknown tool; pure Node |
+| Nonzero ≠ PASS | `npm test` | Exit code 9 with stdout `PASS…` still fails the step and blocks dependents |
+| Cancel / timeout | `npm test` | Pre-aborted signal → `cancelled` with 0 calls; hung child killed at deadline; post-deadline completion cannot succeed |
+| Adversarial shell-literal | `npm test` | `$(…)`, backticks, `;`, pipes stay literal argv (no shell) via `executeNode` |
+| Receipt hygiene | `npm test` | Receipts omit raw args / stdout / stderr secrets |
+| Offline demo | `npm run demo` | Tiny trusted DAG runs real Node subprocesses; prints JSON receipt (`awaiting_review`) |
 
-## What these tests do **not** prove
+## What is VOID / not proven yet
 
-- **Model quality / agent IQ** — no LLM calls in the default path; no held-out outcome-eval receipt published yet.
-- **Production orchestration** — stub only; not a multi-agent runtime, tool sandbox, or durable workflow engine.
-- **Latency / cost / context efficiency** — not measured in this scaffold.
-- **Security of agent tool use** — no sandbox or allowlist enforcement tests yet.
-- **Stars, marketing copy, or README polish** — not evidence of harness maturity.
+| Claim | Status | Why |
+| --- | --- | --- |
+| GitHub Actions green | **VOID** until Actions enabled + token has `workflow` scope to push `.github/workflows/ci.yml` | `ci.yml` is kept in-tree; remote may lack workflow file until scope is granted. Do **not** invent a green Actions URL. |
+| Model quality / agent IQ | **Not claimed** | No LLM calls on the default path; no held-out outcome-eval receipt. |
+| Production multi-agent product | **Not claimed** | Runtime is a deterministic DAG executor with budgets/retries/cancel — not a hosted agent platform. |
+| Game / castle / i18n pipeline | **Out of scope** | Donor NumbahWan factory/CLI/game tests were intentionally not ported. |
+| Latency / cost / context efficiency | **Not measured** | — |
+| OS security sandbox | **Not claimed** | `executeNode` uses `shell: false` + process-group kill; not an OS sandbox. |
+
+## CI honesty
+
+- File present locally: `.github/workflows/ci.yml` (runs `node --test` + demo smoke).
+- If this commit could not push the workflow path (missing OAuth `workflow` scope), treat any README “CI gate” wording as **VOID on remote** until a human enables Actions and re-pushes with workflow scope.
+- Prefer: keep `ci.yml` in git history + document the scope gap rather than delete the file or invent greens.
 
 ## Anti-sycophancy note
 
-If a future PR adds model-eval scores, require: dated command, fixture hash or commit SHA, provider/model id, and an explicit VOID until those exist. Do not treat self-praise as green.
+No wow / instant-hire claims. If a future PR adds model-eval scores, require: dated command, fixture hash or commit SHA, provider/model id, and explicit VOID until those exist.

@@ -1,7 +1,7 @@
 {
   "name": "mycelium-harness",
   "version": "0.1.0",
-  "description": "Track A agentic harness: deterministic orchestration stubs, mechanical graders, cold-clone offline proof.",
+  "description": "Track A agentic harness: workflow-runtime DAG (budgets/retries/cancel), mechanical graders, cold-clone offline proof.",
   "license": "MIT",
   "private": false,
   "type": "commonjs",
@@ -21,6 +21,7 @@
     "tests/",
     "evals/",
     "docs/",
+    ".github/workflows/",
     "AGENTS.md",
     "README.md",
     "LICENSE"
