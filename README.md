@@ -25,7 +25,7 @@ No API keys. No network after clone. Node ≥ 18.
 | `evals/` | Mechanical grader + fixture |
 | `docs/CREDIBILITY.md` | What is / is not proven (dated) |
 | `AGENTS.md` | Short progressive-disclosure front door |
-| `.github/workflows/ci.yml` | Intended CI: same `node --test` suite |
+| `.github/workflows/ci.yml` | Intended CI (local scaffold; **not on remote** until `workflow` scope) |
 
 ## CI status (honesty)
 

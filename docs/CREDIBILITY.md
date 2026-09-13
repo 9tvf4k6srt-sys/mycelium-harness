@@ -21,7 +21,7 @@ Honesty layer for screeners and agents. Dated claims only; no invented greens.
 
 | Claim | Status | Why |
 | --- | --- | --- |
-| GitHub Actions green | **VOID** until Actions enabled + token has `workflow` scope to push `.github/workflows/ci.yml` | `ci.yml` is kept in-tree; remote may lack workflow file until scope is granted. Do **not** invent a green Actions URL. |
+| GitHub Actions green | **VOID** until Actions enabled + token has `workflow` scope to push `.github/workflows/ci.yml` | **Remote tree currently has no** `.github/workflows/ci.yml` (OAuth push rejected). File retained in local scaffold only. Do **not** invent a green Actions URL. |
 | Model quality / agent IQ | **Not claimed** | No LLM calls on the default path; no held-out outcome-eval receipt. |
 | Production multi-agent product | **Not claimed** | Runtime is a deterministic DAG executor with budgets/retries/cancel — not a hosted agent platform. |
 | Game / castle / i18n pipeline | **Out of scope** | Donor NumbahWan factory/CLI/game tests were intentionally not ported. |
@@ -30,9 +30,10 @@ Honesty layer for screeners and agents. Dated claims only; no invented greens.
 
 ## CI honesty
 
-- File present locally: `.github/workflows/ci.yml` (runs `node --test` + demo smoke).
-- If this commit could not push the workflow path (missing OAuth `workflow` scope), treat any README “CI gate” wording as **VOID on remote** until a human enables Actions and re-pushes with workflow scope.
-- Prefer: keep `ci.yml` in git history + document the scope gap rather than delete the file or invent greens.
+- File present **locally** (scaffold): `.github/workflows/ci.yml` (runs `node --test` + demo smoke).
+- File **absent on `origin/main`** as of this dated note: `git push` refused workflow path without OAuth `workflow` scope; Contents API also failed.
+- Treat README “CI” wording as **VOID on remote** until a human re-pushes `ci.yml` with workflow scope and enables Actions.
+- Prefer documenting the scope gap over inventing greens.
 
 ## Anti-sycophancy note
 
