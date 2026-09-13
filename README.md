@@ -30,11 +30,11 @@ No API keys. No network after clone. Node ≥ 18.
 | `evals/REPLICATION.md` | Cold-clone checklist for the offline eval |
 | `docs/CREDIBILITY.md` | What is / is not proven (dated) |
 | `AGENTS.md` | Short progressive-disclosure front door |
-| `.github/workflows/ci.yml` | Intended CI (`npm test` + eval + demo); **Actions green VOID** until a real run exists |
+| `.github/workflows/ci.yml` | CI: `npm test` + eval + planted-fail + demo — [green run](https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796) |
 
 ## CI status (honesty)
 
-**VOID on remote until GitHub Actions shows a real green run.** Prefer documenting OAuth `workflow` scope gaps over inventing a badge/URL. See [docs/CREDIBILITY.md](docs/CREDIBILITY.md).
+Actions green (fetched): https://github.com/9tvf4k6srt-sys/mycelium-harness/actions/runs/34734451796 — see [docs/CREDIBILITY.md](docs/CREDIBILITY.md) for what that does and does not prove.
 
 ## Credibility
 
