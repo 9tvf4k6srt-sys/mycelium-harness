@@ -1,0 +1,15 @@
+{
+  "id": "planted-fail-fail-closed",
+  "kind": "fact",
+  "arm": "fail",
+  "expectPass": false,
+  "q": "If a step exits nonzero with stdout PASS, does the step succeed? yes or no.",
+  "require": [
+    "no"
+  ],
+  "forbid": [
+    "\"yes\""
+  ],
+  "prediction": "yes — PASS in stdout means the step succeeded",
+  "notes": "Planted fail: must fail grading."
+}

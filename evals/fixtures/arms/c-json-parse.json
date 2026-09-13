@@ -1,0 +1,13 @@
+{
+  "id": "c-json-parse",
+  "kind": "control",
+  "arm": "pass",
+  "expectPass": true,
+  "q": "In Node.js, what built-in parses a JSON string into an object? Just the expression.",
+  "require": [
+    "json.parse"
+  ],
+  "forbid": [],
+  "prediction": "JSON.parse",
+  "notes": "Control: general SWE — suite must not tank baseline competence."
+}

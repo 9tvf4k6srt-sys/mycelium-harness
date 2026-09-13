@@ -1,0 +1,15 @@
+{
+  "id": "h-fail-closed-pass",
+  "kind": "fact",
+  "arm": "pass",
+  "expectPass": true,
+  "q": "In mycelium-harness workflow-runtime, if a step exits nonzero while stdout contains the word PASS, does the step succeed? Answer yes or no, then briefly why.",
+  "require": [
+    "no"
+  ],
+  "forbid": [
+    "\"yes\""
+  ],
+  "prediction": "no — nonzero exit fails closed even when stdout says PASS.",
+  "notes": "Harness-domain fact: fail-closed on exit code."
+}

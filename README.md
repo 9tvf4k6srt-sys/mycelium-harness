@@ -2,7 +2,7 @@
 
 Track A **agentic harness** portfolio: reproducible ground-truth checks a stranger can cold-clone and run **offline**.
 
-Impress = deterministic workflow-runtime tests + honest CREDIBILITY exclusions — **not** game assets, not a 765 MiB HTML dump, not model IQ claims.
+Impress = deterministic workflow-runtime tests + mechanical multi-arm eval + honest CREDIBILITY exclusions — **not** game assets, not a 765 MiB HTML dump, not model IQ claims.
 
 ## 2-minute offline demo
 
@@ -10,26 +10,31 @@ Impress = deterministic workflow-runtime tests + honest CREDIBILITY exclusions �
 git clone https://github.com/9tvf4k6srt-sys/mycelium-harness.git
 cd mycelium-harness
 npm test
+npm run eval
+npm run eval:assert-fail
 npm run demo
 ```
 
 No API keys. No network after clone. Node ≥ 18.
+
+`npm run demo` prints a versioned run receipt and writes `evals/results/demo-receipt.json` (gitignored).
 
 ## What you get
 
 | Surface | Role |
 | --- | --- |
 | `lib/workflow-runtime.cjs` | Adapted DAG runtime: budgets, retries, cancel, fail-closed receipts |
-| `tests/orchestration.test.cjs` | Subset of donor reliability tests (`node --test`) |
-| `bin/orchestrator-demo.cjs` | One-command offline DAG demo (real subprocesses) |
-| `evals/` | Mechanical grader + fixture |
+| `tests/` | Reliability + mechanical-eval + receipt sequence contracts (`node --test`) |
+| `bin/orchestrator-demo.cjs` | Offline DAG demo; writes versioned receipt JSON |
+| `evals/mechanical-eval.cjs` | Multi-arm mechanical grader (pass/control/adversarial/poison + planted fail) |
+| `evals/REPLICATION.md` | Cold-clone checklist for the offline eval |
 | `docs/CREDIBILITY.md` | What is / is not proven (dated) |
 | `AGENTS.md` | Short progressive-disclosure front door |
-| `.github/workflows/ci.yml` | Intended CI (local scaffold; **not on remote** until `workflow` scope) |
+| `.github/workflows/ci.yml` | Intended CI (`npm test` + eval + demo); **Actions green VOID** until a real run exists |
 
 ## CI status (honesty)
 
-**VOID on remote until GitHub Actions is enabled and the pushing token has `workflow` scope.** The workflow file is kept in-tree; absence of a green Actions badge/URL is intentional — do not invent one. See [docs/CREDIBILITY.md](docs/CREDIBILITY.md).
+**VOID on remote until GitHub Actions shows a real green run.** Prefer documenting OAuth `workflow` scope gaps over inventing a badge/URL. See [docs/CREDIBILITY.md](docs/CREDIBILITY.md).
 
 ## Credibility
 

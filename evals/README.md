@@ -1,26 +1,24 @@
 # evals
 
-Mechanical graders only in this scaffold. No model calls on the default path.
+Mechanical graders only on the default path. No model calls. No TCG fixtures.
 
-## Fixture: exact-match
-
-File: `fixtures/exact-match.json`
+## Offline multi-arm suite
 
 ```bash
-node -e "
-const fs = require('fs');
-const f = JSON.parse(fs.readFileSync('evals/fixtures/exact-match.json','utf8'));
-const pred = f.prediction;
-const pass = pred === f.expected;
-console.log(JSON.stringify({ id: f.id, pass, grader: f.grader }, null, 2));
-process.exit(pass ? 0 : 1);
-"
+npm run eval              # pass/control/adversarial/poison → exit 0
+npm run eval:assert-fail  # planted fail fixtures must fail
+node evals/mechanical-eval.cjs --dry-run
 ```
 
-## What this proves
+See [REPLICATION.md](./REPLICATION.md) for the checklist an outsider can follow.
 
-Exact-string equality is **mechanical** and offline-reproducible.
+## Legacy exact-match fixture
 
-## What this does not prove
+File: `fixtures/exact-match.json` — still valid as a one-liner smoke; the
+multi-arm suite supersedes it for CI credibility.
 
-Agent reasoning quality, tool-use safety, or production eval maturity. See `docs/CREDIBILITY.md`.
+## What this proves / does not prove
+
+Proves: offline mechanical require/forbid grading across arms; planted fail fails.
+Does **not** prove: agent reasoning quality, model IQ, or live MEMORY-HELPS.
+See `docs/CREDIBILITY.md`.

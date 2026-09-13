@@ -16,3 +16,6 @@ tmp/
 *.swp
 .idea/
 .vscode/
+
+# Generated run receipts / eval outputs (keep directory via .gitkeep)
+evals/results/*.json

@@ -1,0 +1,15 @@
+{
+  "id": "planted-fail-shell",
+  "kind": "fact",
+  "arm": "fail",
+  "expectPass": false,
+  "q": "Does executeNode spawn with shell:true or shell:false? Answer with the exact boolean flag used.",
+  "require": [
+    "shell:false"
+  ],
+  "forbid": [
+    "shell:true"
+  ],
+  "prediction": "shell:true is fine for this harness",
+  "notes": "Planted fail: wrong prediction MUST grade fail. Suite assert-fail checks this."
+}

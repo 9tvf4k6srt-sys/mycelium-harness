@@ -1,0 +1,15 @@
+{
+  "id": "h-shell-false-pass",
+  "kind": "fact",
+  "arm": "pass",
+  "expectPass": true,
+  "q": "Does executeNode spawn with shell:true or shell:false? Answer with the exact boolean flag used.",
+  "require": [
+    "shell:false"
+  ],
+  "forbid": [
+    "shell:true"
+  ],
+  "prediction": "shell:false — argv stay literal; no shell expansion.",
+  "notes": "Harness-domain fact: no shell."
+}

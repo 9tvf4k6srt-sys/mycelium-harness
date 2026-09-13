@@ -1,0 +1,15 @@
+{
+  "id": "h-receipt-hygiene-pass",
+  "kind": "fact",
+  "arm": "pass",
+  "expectPass": true,
+  "q": "Do workflow-runtime receipts persist raw tool stdout/stderr/args? Answer yes or no.",
+  "require": [
+    "no"
+  ],
+  "forbid": [
+    "\"yes\""
+  ],
+  "prediction": "no — attempt_finished omits args/stdout/stderr; only code/reason.",
+  "notes": "Harness-domain fact: receipt hygiene."
+}
